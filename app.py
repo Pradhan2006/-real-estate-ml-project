@@ -106,3 +106,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+import os
+import joblib
+import streamlit as st
+import subprocess
+
+MODEL_PATH = "models/model_data.joblib"
+
+# If model doesn't exist, train it
+if not os.path.exists(MODEL_PATH):
+    st.info("Training model for first run... please wait ⏳")
+    subprocess.run(["python3", "src/train.py"])
+
+# Load model
+model = joblib.load(MODEL_PATH)
