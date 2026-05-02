@@ -1,7 +1,19 @@
 import os
 import joblib
 import pandas as pd
+import pandas as pd
 from sklearn.datasets import fetch_california_housing
+
+def load_data():
+    data = fetch_california_housing(as_frame=True)
+    df = data.frame
+
+    X = df.drop("MedHouseVal", axis=1)
+    y = df["MedHouseVal"]
+
+    feature_names = X.columns
+
+    return X, y, feature_names
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
