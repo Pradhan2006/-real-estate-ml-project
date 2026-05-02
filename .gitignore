@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 models/model_data.joblib
 .DS_Storemodels/
+models/
