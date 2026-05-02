@@ -2,4 +2,4 @@ venv/
 __pycache__/
 *.pyc
 models/model_data.joblib
-.DS_Store
+.DS_Storemodels/
